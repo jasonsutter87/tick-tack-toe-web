@@ -71,6 +71,7 @@ function inProgress(){
             $that.css('background-image', 'url("o.png")')
             $that.css('background-repeat', 'no-repeat')
             $that.css('background-size', '100% 100%')
+  
           }
           board = []
 
@@ -85,6 +86,7 @@ function inProgress(){
 
       //Win Logic
       if ( board.length < 1){
+
         whoWon()
       }else{
         whoWon()
