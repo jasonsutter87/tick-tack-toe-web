@@ -23,7 +23,7 @@ $(document).on('ready', function(){
   var nine = document.getElementById(9);
 
   allSquares.push(one,two,three,four,five,six,seven,eight,nine);
-  inProgress()
+  console.log(inProgress())
 })
 
 //Checks whoes turn it is
@@ -54,7 +54,7 @@ function inProgress(){
     }
   }
 
-  if( board.length >= 1 ){
+  if( board.length > 1 ){
       $('.gameboard').on('click', function(){
       var $that = $(this)
 
@@ -70,8 +70,20 @@ function inProgress(){
             $that.css('background-repeat', 'no-repeat')
             $that.css('background-size', '100% 100%')
           }
+          board = []
+
+          for(var i = 0; i < allSquares.length; i++){
+            if($(allSquares[i]).attr('value') == 'true'){
+              board.push($(allSquares[i]).attr('value'))
+            }
+          }
       }else{
           console.log("This Spot is taken !!!!")
+      }
+
+      //Win Logic
+      if ( board.length == 0){
+        window.alert("Game is over")
       }
     })
   }
