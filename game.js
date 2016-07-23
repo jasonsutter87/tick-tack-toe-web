@@ -1,4 +1,14 @@
 var allSquares = [];
+var board = []
+var $boxOne;
+var $boxTwo;
+var $boxThree;
+var $boxFour;
+var $boxFive;
+var $boxSix;
+var $boxSeven;
+var $boxEight;
+var $boxNine;
 
 $(document).on('ready', function(){
   console.log('READY!')
@@ -13,65 +23,56 @@ $(document).on('ready', function(){
   var nine = document.getElementById(9);
 
   allSquares.push(one,two,three,four,five,six,seven,eight,nine);
-
-  var $one = $(one).css( "background-color")
-  var $two = $(two).css( "background-color")
-  var $three = $(two).css( "background-color")
-  var $four = $(two).css( "background-color")
-  var $five = $(two).css( "background-color")
-  var $six = $(two).css( "background-color")
-  var $seven = $(two).css( "background-color")
-  var $eight = $(two).css( "background-color")
-  var $nine = $(two).css( "background-color")
-
-
-  // In Progress
-  if($one  === 'rgb(217, 217, 217)' ||
-     $two  === 'rgb(217, 217, 217)' ||
-     $three  === 'rgb(217, 217, 217)' ||
-     $four  === 'rgb(217, 217, 217)' ||
-     $five  === 'rgb(217, 217, 217)' ||
-     $six  === 'rgb(217, 217, 217)' ||
-     $seven  === 'rgb(217, 217, 217)' ||
-     $eight  === 'rgb(217, 217, 217)' ||
-     $nine  === 'rgb(217, 217, 217)'
-    ){
-      $('.gameboard').on('click', function(){
-      var $that = $(this)
-
-      if( whoesTurn() == "X"){
-        $that.attr('value', false)
-        $that.css('background-color', "black")
-
-      }else{
-        $that.attr('value', false)
-        $that.css('background-color', "red")
-      }
-    })
-  }else{
-    // The game has ended
-    console.log('Tie-Game')
-  }
+  inProgress()
 })
 
 //Checks whoes turn it is
 function whoesTurn(){
-  var board = []
-  console.log("WHO TURN")
+  board = []
   for(var i = 0; i < allSquares.length; i++){
     if($(allSquares[i]).attr('value') == 'true'){
       board.push($(allSquares[i]).attr('value'))
     }
   }
-  if(board.length % 2){
-    return "X"
-  }else{
-    return "O"
-  }
+    if (board.length >= 1 ){
+      if(board.length % 2){
+        board = []
+        return "X"
+      }else{
+        board = []
+        return "O"
+      }
+    }
 }
 
+function inProgress(){
+  board = []
 
-//Place player on the board
-function placePlayer(){
+  for(var i = 0; i < allSquares.length; i++){
+    if($(allSquares[i]).attr('value') == 'true'){
+      board.push($(allSquares[i]).attr('value'))
+    }
+  }
 
+  if( board.length >= 1 ){
+      $('.gameboard').on('click', function(){
+      var $that = $(this)
+
+      if( $that.attr('value') == 'true' ){
+          if( whoesTurn() == "X"){
+            $that.attr('value', false)
+            $that.css('background-image',  'url("x.png")')
+            $that.css('background-repeat', 'no-repeat')
+            $that.css('background-size', '100% 100%')
+          }else{
+            $that.attr('value', false)
+            $that.css('background-image', 'url("o.png")')
+            $that.css('background-repeat', 'no-repeat')
+            $that.css('background-size', '100% 100%')
+          }
+      }else{
+          console.log("This Spot is taken !!!!")
+      }
+    })
+  }
 }

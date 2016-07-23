@@ -6,7 +6,17 @@
 
 
 
-## Stretch
+
+## what is done
+- MVP!!!
 - X always goes first
+- user can place X maker or O markers where they want to go
 - there can only be 9 moves
-- a user can win by connecting three X's or O's in a row in any direction
+- a user cant override someones turn.
+
+
+## what needs to be done
+- win logic
+
+## Stretch
+- can work for 5 x5 board
