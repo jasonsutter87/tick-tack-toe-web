@@ -6,6 +6,7 @@ h1{
   text-align: center;
 }
 
+
 .container{
   margin: auto;
   width: 50%;
@@ -15,7 +16,6 @@ h1{
 }
 
 .gameboard{
-    /*background-color: #d9d9d9;*/
     display: inline-block;
     width: 125px;
     height: 125px;
