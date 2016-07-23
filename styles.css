@@ -1,0 +1,22 @@
+body{
+  background-color: green;
+}
+
+h1{
+  text-align: center;
+}
+
+.container{
+  margin: auto;
+  width: 50%;
+  background-image:  url("board.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.gameboard{
+    /*background-color: #d9d9d9;*/
+    display: inline-block;
+    width: 125px;
+    height: 125px;
+}
