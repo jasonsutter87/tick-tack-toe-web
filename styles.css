@@ -1,0 +1,12 @@
+body{
+  background-color: green;
+}
+
+.container{
+  background-color: blue;
+}
+
+.gameboard{
+    background-color: orange;
+    display: inline-block;
+}
