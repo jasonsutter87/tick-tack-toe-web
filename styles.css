@@ -4,9 +4,13 @@ body{
 
 .container{
   background-color: blue;
+  margin: auto;
+  width: 50%;
 }
 
 .gameboard{
-    background-color: orange;
+    background-color: #d9d9d9;
     display: inline-block;
+    width: 125px;
+    height: 125px;
 }
