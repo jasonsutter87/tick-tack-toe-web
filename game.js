@@ -1,29 +1,29 @@
 var allSquares = [];
 var board = []
-var $boxOne;
-var $boxTwo;
-var $boxThree;
-var $boxFour;
-var $boxFive;
-var $boxSix;
-var $boxSeven;
-var $boxEight;
-var $boxNine;
+var one
+var two
+var three
+var four
+var five
+var six
+var seven
+var eight
+var nine
 
 $(document).on('ready', function(){
   console.log('READY!')
-  var one = document.getElementById(1);
-  var two = document.getElementById(2);
-  var three = document.getElementById(3);
-  var four = document.getElementById(4);
-  var five = document.getElementById(5);
-  var six = document.getElementById(6);
-  var seven = document.getElementById(7);
-  var eight = document.getElementById(8);
-  var nine = document.getElementById(9);
+  one = document.getElementById(1);
+  two = document.getElementById(2);
+  three = document.getElementById(3);
+  four = document.getElementById(4);
+  five = document.getElementById(5);
+  six = document.getElementById(6);
+  seven = document.getElementById(7);
+  eight = document.getElementById(8);
+  nine = document.getElementById(9);
 
   allSquares.push(one,two,three,four,five,six,seven,eight,nine);
-  console.log(inProgress())
+  inProgress()
 })
 
 //Checks whoes turn it is
@@ -61,14 +61,17 @@ function inProgress(){
       if( $that.attr('value') == 'true' ){
           if( whoesTurn() == "X"){
             $that.attr('value', false)
+            $that.attr('player', "x")
             $that.css('background-image',  'url("x.png")')
             $that.css('background-repeat', 'no-repeat')
             $that.css('background-size', '100% 100%')
           }else{
             $that.attr('value', false)
+            $that.attr('player', "o")
             $that.css('background-image', 'url("o.png")')
             $that.css('background-repeat', 'no-repeat')
             $that.css('background-size', '100% 100%')
+  
           }
           board = []
 
@@ -82,9 +85,79 @@ function inProgress(){
       }
 
       //Win Logic
-      if ( board.length == 0){
-        window.alert("Game is over")
+      if ( board.length < 1){
+
+        whoWon()
+      }else{
+        whoWon()
       }
     })
   }
 }
+
+function whoWon(){
+        if($(one).attr('player') + $(two).attr('player') + $(three).attr('player') === "xxx"){
+          window.alert("X Won!!!")
+        }
+
+        if($(one).attr('player') + $(two).attr('player') + $(three).attr('player') === "ooo"){
+          window.alert("O Won!!!")
+        }
+
+        if($(four).attr('player') + $(five).attr('player') + $(six).attr('player') === "xxx"){
+          window.alert("X Won!!!")
+        }
+
+        if($(four).attr('player') + $(five).attr('player') + $(six).attr('player') === "ooo"){
+          window.alert("O Won!!!")
+        }
+
+        if($(seven).attr('player') + $(eight).attr('player') + $(nine).attr('player') === "ooo"){
+          window.alert("O Won!!!")
+        }
+
+        if($(seven).attr('player') + $(eight).attr('player') + $(nine).attr('player') === "xxx"){
+          window.alert("X Won!!!")
+        }
+
+        if($(one).attr('player') + $(four).attr('player') + $(seven).attr('player') === "xxx"){
+          window.alert("X Won!!!")
+        }
+
+        if($(one).attr('player') + $(four).attr('player') + $(seven).attr('player') === "ooo"){
+          window.alert("O Won!!!")
+        }
+
+        if($(two).attr('player') + $(five).attr('player') + $(eight).attr('player') === "xxx"){
+          window.alert("X Won!!!")
+        }
+
+        if($(two).attr('player') + $(five).attr('player') + $(eight).attr('player') === "ooo"){
+          window.alert("O Won!!!")
+        }
+
+        if($(three).attr('player') + $(six).attr('player') + $(nine).attr('player') === "xxx"){
+          window.alert("X Won!!!")
+        }
+
+        if($(three).attr('player') + $(six).attr('player') + $(nine).attr('player') === "ooo"){
+          window.alert("O Won!!!")
+        }
+
+        if($(one).attr('player') + $(five).attr('player') + $(nine).attr('player') === "xxx"){
+          window.alert("X Won!!!")
+        }
+
+        if($(one).attr('player') + $(five).attr('player') + $(nine).attr('player') === "ooo"){
+          window.alert("O Won!!!")
+        }
+
+        if($(three).attr('player') + $(five).attr('player') + $(seven).attr('player') === "xxx"){
+          window.alert("X Won!!!")
+        }
+        if($(three).attr('player') + $(five).attr('player') + $(seven).attr('player') === "ooo"){
+          window.alert("O Won!!!")
+        }
+
+
+      }
