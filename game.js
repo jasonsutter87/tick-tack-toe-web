@@ -23,17 +23,6 @@ $(document).on('ready', function(){
   var nine = document.getElementById(9);
 
   allSquares.push(one,two,three,four,five,six,seven,eight,nine);
-
-  $one = $(one).css( "background-color")
-  $two = $(two).css( "background-color")
-  $three = $(two).css( "background-color")
-  $four = $(two).css( "background-color")
-  $five = $(two).css( "background-color")
-  $six = $(two).css( "background-color")
-  $seven = $(two).css( "background-color")
-  $eight = $(two).css( "background-color")
-  $nine = $(two).css( "background-color")
-
   inProgress()
 })
 
@@ -72,10 +61,14 @@ function inProgress(){
       if( $that.attr('value') == 'true' ){
           if( whoesTurn() == "X"){
             $that.attr('value', false)
-            $that.css('background-color', "black")
+            $that.css('background-image',  'url("x.png")')
+            $that.css('background-repeat', 'no-repeat')
+            $that.css('background-size', '100% 100%')
           }else{
             $that.attr('value', false)
-            $that.css('background-color', "red")
+            $that.css('background-image', 'url("o.png")')
+            $that.css('background-repeat', 'no-repeat')
+            $that.css('background-size', '100% 100%')
           }
       }else{
           console.log("This Spot is taken !!!!")
