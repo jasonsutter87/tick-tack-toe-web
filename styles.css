@@ -2,10 +2,14 @@ body{
   background-color: green;
 }
 
+h1{
+  text-align: center;
+}
+
 .container{
-  background-color: blue;
   margin: auto;
   width: 50%;
+
 }
 
 .gameboard{
