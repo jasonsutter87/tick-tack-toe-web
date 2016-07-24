@@ -1,0 +1,23 @@
+body{
+  background-color: green;
+}
+
+h1{
+  text-align: center;
+}
+
+
+.container{
+  margin: auto;
+  position: relative;
+  padding: 20px;
+  background-image:  url("../img/board.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.gameboard{
+    display: inline-block;
+    width: 33%;
+    height: 175px;
+}
