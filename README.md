@@ -1,5 +1,6 @@
 # tick-tack-toe-web
 > tick-tack-toe for the web
+https://ticktac.herokuapp.com/
 
 ## MVP
 - a player can place an "X" and "O" on a grid
